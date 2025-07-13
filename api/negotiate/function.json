@@ -1,0 +1,22 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": ["get", "post"],
+      "authLevel": "anonymous",
+      "name": "req",
+      "direction": "in"
+    },
+    {
+      "type": "signalRConnectionInfo",
+      "name": "signalRConnectionInfo",
+      "hubName": "clipboardHub",
+      "direction": "in"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}

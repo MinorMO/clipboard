@@ -1,0 +1,35 @@
+# 👉 Node.js / npm
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 👉 Azure Functions
+api/local.settings.json
+api/bin/
+api/obj/
+api/.funcpack/
+api/.funcignore
+
+# 👉 Archivos de sistema y entorno
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# 👉 Configuración de editor
+.vscode/
+.idea/
+*.code-workspace
+
+# 👉 Otros archivos temporales
+*.log
+*.tmp
+*.bak
+*.old
+
+# 👉 Entornos virtuales o paquetes no deseados
+.env
+.env.*
+*.tsbuildinfo
