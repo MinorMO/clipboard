@@ -7,22 +7,23 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f1f4f8;
+      background: #1e1e2f;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 0;
-      padding: 2rem;
     }
 
     h2 {
-      color: #333;
+      color: #ffffff;
     }
 
     #login, #clipboard {
-      background: white;
+      background: #2c2c3e;
       border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
       padding: 2rem;
       width: 100%;
       max-width: 500px;
@@ -30,24 +31,24 @@
       margin-bottom: 2rem;
     }
 
-    input, textarea {
+    input, textarea, button {
       width: 100%;
       padding: 0.7rem;
       margin: 0.5rem 0;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 5px;
       font-size: 1rem;
+    }
+
+    input, textarea {
+      background-color: #3a3a4f;
+      color: white;
     }
 
     button {
       background-color: #0078D4;
       color: white;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      border-radius: 5px;
-      font-size: 1rem;
       cursor: pointer;
-      margin-top: 0.5rem;
     }
 
     button:hover {
@@ -62,23 +63,32 @@
     .message {
       padding: 0.5rem;
       margin-bottom: 0.5rem;
-      background: #eef3f9;
+      background: #444;
       border-radius: 6px;
       word-wrap: break-word;
     }
 
     .message img {
-      display: block;
       margin-top: 0.5rem;
       max-width: 100%;
       border-radius: 6px;
     }
 
     #welcome {
-      margin-bottom: 1rem;
       font-weight: bold;
       font-size: 1.2rem;
-      color: #444;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      #login, #clipboard {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -90,26 +100,21 @@
     <input id="password" type="password" placeholder="Contraseña" />
     <button onclick="login()">Entrar</button>
     <label>
-  <!-- <input type="checkbox" id="privateMode" /> -->
-
-  <!--  Usar sesión privada-->
-</label>
+   
+    </label>
   </div>
 
   <div id="clipboard" style="display: none;">
     <div id="welcome"></div>
     <h2>Clipboard Compartido</h2>
     <textarea id="message" placeholder="Escribí o pegá texto o imágenes..." rows="6"></textarea>
+    <input type="file" id="imageInput" accept="image/*" />
     <button id="send">Enviar</button>
-    <button onclick="clearMessages()" style="margin-top: 0.5rem; background-color: gray;">Limpiar Chat</button>
-
+    <button onclick="clearMessages()" style="background-color: gray;">Limpiar Chat</button>
     <div id="messages"></div>
   </div>
 
-  <!-- SignalR SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@7.0.5/dist/browser/signalr.min.js"></script>
-
-  <!-- Tu script de login y conexión -->
   <script src="login.js"></script>
   <script src="clipboard.js"></script>
 </body>
