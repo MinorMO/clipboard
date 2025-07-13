@@ -50,6 +50,17 @@ sendBtn.addEventListener("click", () => {
     messageInput.value = "";
   }
 });
+messageInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    const message = messageInput.value.trim();
+    if (message) {
+      sendToServer(message);
+      messageInput.value = "";
+    }
+  }
+});
+
 
 imageInput.addEventListener("change", () => {
   const file = imageInput.files[0];
